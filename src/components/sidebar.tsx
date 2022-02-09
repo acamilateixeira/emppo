@@ -18,13 +18,16 @@ export function Sidebar({ hiddenSidebarIsVisible, toggleHiddenSidebar, window }:
       drawer: {
         width: 320,
         flexShrink: 0,
+        height: '100%',
       },
       drawerPaper: {
         width: 350,
         borderRadius: 30,
         border: 0,
         margin: 5,
+        height: '100%',
         boxShadow: '0 8px 8px 8px rgba(0, 0, 0, 0.08)',
+        paddingBottom: 50,
       },
     })
   )();
