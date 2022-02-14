@@ -2,7 +2,7 @@ import { createStyles, makeStyles } from '@material-ui/core';
 
 import Drawer from '@material-ui/core/Drawer';
 
-import { PainelOption } from './painelOption';
+import { DashboardOption } from './dashboardOption';
 
 interface SidebarProps {
   hiddenSidebarIsVisible: boolean;
@@ -43,7 +43,7 @@ export function Sidebar({ hiddenSidebarIsVisible, toggleHiddenSidebar, window }:
           paper: css.drawerPaper,
         }}
       >
-        <PainelOption />
+        <DashboardOption />
       </Drawer>
     </nav>
   );
