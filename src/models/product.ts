@@ -1,3 +1,5 @@
+import { Type } from "./type";
+
 export interface Product {
   id: number;
   name: string;
@@ -6,5 +8,5 @@ export interface Product {
   image: string;
   category: string;
   quantity: number;
-  status: string;
+  status: Type;
 }

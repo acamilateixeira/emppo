@@ -1,7 +1,9 @@
+import { Type } from './type';
+
 export interface Payment {
   id: number;
-  description: string;
+  typePayment: Type;
   value: number;
   date: string;
-  status: string;
+  status: Type;
 }
