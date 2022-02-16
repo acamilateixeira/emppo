@@ -111,7 +111,7 @@ export function DashboardOption() {
                 toggle={() => setSettingsUser(!menuSettingsUser)}
                 options={[
                   {
-                    to: '/settings/user/typepermission',
+                    to: '/settings/user/typePermission',
                     title: 'Permissions',
                     icon: VscCircleOutline,
                   },
