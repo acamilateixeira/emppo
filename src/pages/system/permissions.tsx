@@ -18,6 +18,20 @@ export function Permissions() {
     getData();
   }, []);
 
+  async function edit(type: Type) {
+    console.log('edit', type);
+
+    const response = await PermissionServices.putPermission(type);
+    setPermissions(permissions.map(p => (p.id === type.id ? response : p)));
+  }
+
+  async function deleteType(type: Type) {
+    console.log('delete', type);
+
+    await PermissionServices.deletePermission(type.id);
+    setPermissions(permissions.filter(permission => permission.id !== type.id));
+  }
+
   return (
     <>
       <Header
@@ -47,15 +61,7 @@ export function Permissions() {
 
         <Grid item>
           {permissions.length > 0 ? (
-            <List
-              type={permissions}
-              edit={id => {
-                console.log(id);
-              }}
-              delete={id => {
-                console.log(id);
-              }}
-            />
+            <List type={permissions} edit={edit} delete={deleteType} />
           ) : (
             <Typography align='center' color='textSecondary'>
               No permission found
