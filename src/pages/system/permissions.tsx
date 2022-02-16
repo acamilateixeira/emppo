@@ -1,9 +1,9 @@
 import { Grid, Typography } from '@material-ui/core';
 import { useEffect, useState } from 'react';
-import { AlertMessage } from '../../components/alertMessage';
 import { Header } from '../../components/header';
 import { List } from '../../components/system/settings/user/permission/list';
 import { ModalDelete } from '../../components/system/settings/user/permission/modalDelete';
+import { ModalEdit } from '../../components/system/settings/user/permission/modalEdit';
 import { usePermission } from '../../hooks/usePermission';
 import PermissionServices from '../../mocks/getPermission';
 import { Type } from '../../models/type';
@@ -11,12 +11,8 @@ import { Type } from '../../models/type';
 export function Permissions() {
   const { permissions, setPermissions, setPermission } = usePermission();
 
-  const [alert, setAlert] = useState(false);
-  const [alertMessage, setAlertMessage] = useState('Loading...');
-  const [alertType, setAlertType] = useState<'success' | 'error'>('success');
-
   const [modalDelete, setModalDelete] = useState(false);
-  // const [modalEdit, setModalEdit] = useState(false);
+  const [modalEdit, setModalEdit] = useState(false);
 
   // get permissions from promise mock
   useEffect(() => {
@@ -28,19 +24,6 @@ export function Permissions() {
     getData();
   }, [setPermissions]);
 
-  async function edit(type: Type) {
-    console.log('edit', type);
-
-    const response = await PermissionServices.putPermission(type);
-    setPermissions(permissions.map(p => (p.id === type.id ? response : p)));
-
-    if (response) {
-      setAlertType('success');
-      setAlert(true);
-      setAlertMessage('Permission updated successfully');
-    }
-  }
-
   function openModalDelete(type: Type) {
     setPermission(type);
     setModalDelete(true);
@@ -50,14 +33,17 @@ export function Permissions() {
     setModalDelete(false);
   }
 
+  function openModalEdit(type: Type) {
+    setPermission(type);
+    setModalEdit(true);
+  }
+
+  function closeModalEdit() {
+    setModalEdit(false);
+  }
+
   return (
     <>
-      <AlertMessage
-        open={alert}
-        severity={alertType}
-        message={alertMessage}
-        onClose={() => setAlert(false)}
-      />
       <Header
         bradcrumb={{
           current: 'Permission',
@@ -85,7 +71,7 @@ export function Permissions() {
 
         <Grid item>
           {permissions.length > 0 ? (
-            <List type={permissions} edit={edit} delete={openModalDelete} />
+            <List type={permissions} edit={openModalEdit} delete={openModalDelete} />
           ) : (
             <Typography align='center' color='textSecondary'>
               No permission found
@@ -94,6 +80,7 @@ export function Permissions() {
         </Grid>
       </Grid>
 
+      <ModalEdit open={modalEdit} onClose={closeModalEdit} />
       <ModalDelete open={modalDelete} onClose={closeModalDelete} />
     </>
   );

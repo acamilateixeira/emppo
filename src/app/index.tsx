@@ -17,7 +17,7 @@ export function App() {
         main: '#D72323',
       },
       secondary: {
-        main: '#3A4750',
+        main: '#00A19D',
       },
     },
     typography: {
