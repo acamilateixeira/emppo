@@ -47,7 +47,6 @@ export function ModalEdit({ open, onClose }: ModalEditProps) {
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
-                color='secondary'
                 fullWidth
                 variant='outlined'
                 margin='dense'
@@ -61,11 +60,11 @@ export function ModalEdit({ open, onClose }: ModalEditProps) {
         </DialogContent>
 
         <DialogActions>
-          <Button onClick={onClose} size='small' color='primary' variant='text'>
+          <Button onClick={onClose} size='small' color='secondary' variant='text'>
             CLOSE
           </Button>
 
-          <Button onClick={editType} color='secondary' size='small' variant='text'>
+          <Button onClick={editType} color='primary' size='small' variant='text'>
             EDIT
           </Button>
         </DialogActions>

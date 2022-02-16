@@ -14,10 +14,10 @@ export function App() {
     palette: {
       type: type,
       primary: {
-        main: '#D72323',
+        main: '#00A19D',
       },
       secondary: {
-        main: '#00A19D',
+        main: '#D72323',
       },
     },
     typography: {

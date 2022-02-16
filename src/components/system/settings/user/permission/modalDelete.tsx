@@ -49,11 +49,11 @@ export function ModalDelete({ open, onClose }: ModalDeleteProps) {
         </DialogContent>
 
         <DialogActions>
-          <Button onClick={onClose} size='small' color='primary' variant='text'>
+          <Button onClick={onClose} size='small' color='secondary' variant='text'>
             CLOSE
           </Button>
 
-          <Button onClick={deleteType} color='secondary' size='small' variant='text'>
+          <Button onClick={deleteType} color='primary' size='small' variant='text'>
             DELETE
           </Button>
         </DialogActions>
