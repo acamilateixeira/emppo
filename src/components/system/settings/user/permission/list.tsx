@@ -16,6 +16,7 @@ import { useState } from 'react';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import { Type } from '../../../../../models/type';
 import { PaginacaoVirtual } from '../../../../../components/paginacaoVirtual';
+import { usePermission } from '../../../../../hooks/usePermission';
 
 interface ListProps {
   edit: (type: Type) => void;
@@ -24,6 +25,8 @@ interface ListProps {
 }
 
 export function List({ type, edit, delete: deleteType }: ListProps) {
+  const { permissions } = usePermission();
+
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
@@ -53,8 +56,8 @@ export function List({ type, edit, delete: deleteType }: ListProps) {
 
         <TableBody>
           {(rowsPerPage > 0
-            ? type.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-            : type
+            ? permissions.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+            : permissions
           ).map(type => (
             <TableRow key={type.id}>
               <TableCell>{type.id}</TableCell>
