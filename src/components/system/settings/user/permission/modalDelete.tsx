@@ -17,8 +17,6 @@ export function ModalDelete({ open, onClose }: ModalDeleteProps) {
   const [alertType, setAlertType] = useState<'success' | 'error'>('success');
 
   async function deleteType() {
-    console.log('delete', permission);
-
     const response = await PermissionServices.deletePermission(permission.id);
     setPermissions(permissions.filter(p => p.id !== permission.id));
 

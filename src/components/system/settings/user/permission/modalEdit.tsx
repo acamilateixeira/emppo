@@ -17,8 +17,6 @@ export function ModalEdit({ open, onClose }: ModalEditProps) {
   const [alertType, setAlertType] = useState<'success' | 'error'>('success');
 
   async function editType() {
-    console.log('edit', permission);
-
     const response = await PermissionServices.putPermission(permission);
     setPermissions(permissions.map(p => (p.id === permission.id ? permission : p)));
 
