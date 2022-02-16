@@ -111,12 +111,12 @@ export function DashboardOption() {
                 toggle={() => setSettingsUser(!menuSettingsUser)}
                 options={[
                   {
-                    to: '/settings/user/typePermission',
+                    to: '/system/settings/user/permission',
                     title: 'Permissions',
                     icon: VscCircleOutline,
                   },
                   {
-                    to: '/settings/user/typeUser',
+                    to: '/system/settings/user/typeUser',
                     title: 'Type User',
                     icon: VscCircleOutline,
                   },
@@ -130,27 +130,27 @@ export function DashboardOption() {
                 toggle={() => setSettingsInventory(!menuSettingsInventory)}
                 options={[
                   {
-                    to: '/settings/typeInventory',
+                    to: '/system/settings/typeInventory',
                     title: 'Inventory',
                     icon: VscCircleOutline,
                   },
                   {
-                    to: '/settings/typeProductInventoryStock',
+                    to: '/system/settings/typeProductInventoryStock',
                     title: 'Inventory - Stock',
                     icon: VscCircleOutline,
                   },
                   {
-                    to: '/settings/typeInventorySale',
+                    to: '/system/settings/typeInventorySale',
                     title: 'Inventory - Sale',
                     icon: VscCircleOutline,
                   },
                   {
-                    to: '/settings/typeInventoryBuy',
+                    to: '/system/settings/typeInventoryBuy',
                     title: 'Inventory - Buy',
                     icon: VscCircleOutline,
                   },
                   {
-                    to: '/settings/typeInventoryService',
+                    to: '/system/settings/typeInventoryService',
                     title: 'Inventory - Service',
                     icon: VscCircleOutline,
                   },
@@ -164,22 +164,22 @@ export function DashboardOption() {
                 toggle={() => setSettingsProduct(!menuSettingsProduct)}
                 options={[
                   {
-                    to: '/settings/product/typeProduct',
+                    to: '/system/settings/product/typeProduct',
                     title: 'Product',
                     icon: VscCircleOutline,
                   },
                   {
-                    to: '/settings/product/typeProductStock',
+                    to: '/system/settings/product/typeProductStock',
                     title: 'Product Stock',
                     icon: VscCircleOutline,
                   },
                   {
-                    to: '/settings/product/typeProductSale',
+                    to: '/system/settings/product/typeProductSale',
                     title: 'Product Sale',
                     icon: VscCircleOutline,
                   },
                   {
-                    to: '/settings/product/typeProductBuy',
+                    to: '/system/settings/product/typeProductBuy',
                     title: 'Product Buy',
                     icon: VscCircleOutline,
                   },
@@ -193,12 +193,12 @@ export function DashboardOption() {
                 toggle={() => setSettingsStock(!menuSettingsStock)}
                 options={[
                   {
-                    to: '/settings/stock/typeStock',
+                    to: '/system/settings/stock/typeStock',
                     title: 'Stock',
                     icon: VscCircleOutline,
                   },
                   {
-                    to: '/settings/stock/typeProductStock',
+                    to: '/system/settings/stock/typeProductStock',
                     title: 'Product Stock',
                     icon: VscCircleOutline,
                   },
@@ -212,12 +212,12 @@ export function DashboardOption() {
                 toggle={() => setSettingsOrder(!menuSettingsOrder)}
                 options={[
                   {
-                    to: '/settings/order/typeOrder',
+                    to: '/system/settings/order/typeOrder',
                     title: 'Order',
                     icon: VscCircleOutline,
                   },
                   {
-                    to: '/settings/order/typeProductOrder',
+                    to: '/system/settings/order/typeProductOrder',
                     title: 'Product Order',
                     icon: VscCircleOutline,
                   },
@@ -231,12 +231,12 @@ export function DashboardOption() {
                 toggle={() => setSettingsDelivery(!menuSettingsDelivery)}
                 options={[
                   {
-                    to: '/settings/delivery/typeDelivery',
+                    to: '/system/settings/delivery/typeDelivery',
                     title: 'Delivery',
                     icon: VscCircleOutline,
                   },
                   {
-                    to: '/settings/delivery/typeProductDelivery',
+                    to: '/system/settings/delivery/typeProductDelivery',
                     title: 'Product Delivery',
                     icon: VscCircleOutline,
                   },
@@ -250,12 +250,12 @@ export function DashboardOption() {
                 toggle={() => setSettingsPayment(!menuSettingsPayment)}
                 options={[
                   {
-                    to: '/settings/payment/typePayment',
+                    to: '/system/settings/payment/typePayment',
                     title: 'Payment',
                     icon: VscCircleOutline,
                   },
                   {
-                    to: '/settings/payment/typeProductPayment',
+                    to: '/system/settings/payment/typeProductPayment',
                     title: 'Product Payment',
                     icon: VscCircleOutline,
                   },

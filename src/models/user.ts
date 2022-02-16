@@ -1,4 +1,4 @@
-import { Permission } from './permission';
+import { Type } from './type';
 
 export interface User {
   id: number;
@@ -10,6 +10,6 @@ export interface User {
   photo: string;
   active: boolean;
   token: string;
-  permissions: Permission;
+  permissions: Type;
   cpfCnpj: string;
 }

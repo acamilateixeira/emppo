@@ -43,13 +43,16 @@ export function Dashboard({ children }: DashboardProps) {
           <Container
             maxWidth='xl'
             style={{
-              margin: 0,
-              padding: 0,
+              padding: 5,
             }}
           >
             <Grid container>
               <Grid item xl={12} lg={12} md={12}>
                 {children}
+              </Grid>
+
+              <Grid item xl={12} lg={12} md={12}>
+                <Footer />
               </Grid>
             </Grid>
           </Container>
@@ -60,8 +63,6 @@ export function Dashboard({ children }: DashboardProps) {
         hiddenSidebarIsVisible={hiddenSidebarIsVisible}
         toggleHiddenSidebar={toggleHiddenSidebar}
       />
-
-      <Footer />
     </>
   );
 }

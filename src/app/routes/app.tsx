@@ -2,6 +2,7 @@ import { CssBaseline, Typography, useMediaQuery, useTheme } from '@material-ui/c
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Dashboard } from '../../components/dashboard';
 import { Home } from '../../pages/home';
+import { Permissions } from '../../pages/system/permissions';
 
 export function AppRoutes() {
   const theme = useTheme();
@@ -16,7 +17,10 @@ export function AppRoutes() {
       <Dashboard>
         <CssBaseline />
         <Routes>
-          <Route path='/' element={<Home/>} />
+          <Route path='/' element={<Home />} />
+
+          {/* System */}
+          <Route path='/system/settings/user/permission' element={<Permissions />} />
         </Routes>
       </Dashboard>
     </BrowserRouter>

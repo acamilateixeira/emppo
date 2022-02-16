@@ -1,36 +1,72 @@
-import { Permission } from '../models/permission';
+import { Type } from '../models/type';
 
-export const getPermission = (): Promise<Permission[]> => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve([
-        {
-          id: 1,
-          description: 'Admin',
-        },
-        {
-          id: 2,
-          description: 'Financial',
-        },
-        {
-          id: 3,
-          description: 'Management',
-        },
-        {
-          id: 4,
-          description: 'User',
-        },
-        {
-          id: 5,
-          description: 'Guest',
-        },
-        {
-          id: 6,
-          description: 'Inactive',
-        },
-      ]);
-    }, 1000);
+class PermissionServices {
+  getPermission(): Promise<Type[]> {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve([
+          {
+            id: 1,
+            description: 'Admin',
+          },
+          {
+            id: 2,
+            description: 'User',
+          },
+          {
+            id: 3,
+            description: 'Financial',
+          },
+          {
+            id: 4,
+            description: 'Customer',
+          },
+          {
+            id: 5,
+            description: 'Supplier',
+          },
+          {
+            id: 6,
+            description: 'Employee',
+          },
+          {
+            id: 7,
+            description: 'Customer Service',
+          },
+          {
+            id: 8,
+            description: 'Warehouse',
+          },
+          {
+            id: 9,
+            description: 'Sales',
+          },
+          {
+            id: 10,
+            description: 'Marketing',
+          },
+          {
+            id: 11,
+            description: 'Production',
+          },
+          {
+            id: 12,
+            description: 'Quality Control',
+          },
+          {
+            id: 13,
+            description: 'Finance',
+          },
+          {
+            id: 14,
+            description: 'Logistics',
+          },
+        ]);
 
-    reject('Not found');
-  });
-};
+        // reject('Not found');
+      }, 1000);
+    });
+  }
+}
+
+export default new PermissionServices();

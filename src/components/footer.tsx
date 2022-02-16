@@ -5,10 +5,9 @@ export function Footer() {
     <Box
       pt={4}
       style={{
-        position: 'fixed',
-        left: 0,
+        justifyContent: 'center',
+        position: 'relative',
         bottom: 20,
-        right: 0,
       }}
     >
       <Typography variant='body2' color='textSecondary' align='center'>
