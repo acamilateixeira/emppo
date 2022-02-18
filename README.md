@@ -19,8 +19,6 @@
 
 </p>
 
-Status
-
 <h4 align="center"> 
 	🚧  Emppo 🚀 Under construction...  🚧
 </h4> 
