@@ -9,13 +9,24 @@ import {
   Paper,
   TableContainer,
 } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import { Logo } from '../components/logo';
 
 export function Home() {
+  const css = makeStyles({
+    movement: {
+      transform: 'translateY(5px)',
+      transition: 'transform 0.3s ease-in-out',
+      '&:hover': {
+        transform: 'translateY(-5px)',
+      },
+    },
+  })();
+
   return (
     <>
       <Grid container justifyContent='center' alignItems='center' spacing={1}>
-        <Grid item xl={12} lg={12} md={12}>
+        <Grid item xl={12} lg={12} md={12} classes={{ item: css.movement }}>
           <Typography
             variant='h4'
             align='center'
@@ -77,7 +88,44 @@ export function Home() {
       </Grid>
 
       <Grid container justifyContent='center' style={{ marginTop: '20px' }} spacing={1}>
-        <Grid item xl={2} lg={2} md={2}>
+        <Grid item xl={2} lg={2} md={2} classes={{ item: css.movement }}>
+          <TableContainer component={Paper}>
+            <Table size='small'>
+              <TableHead>
+                <TableRow>
+                  <TableCell align='center'>
+                    <Typography
+                      style={{
+                        fontWeight: 'bold',
+                      }}
+                    >
+                      Here I will practice:
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                <TableRow>
+                  <TableCell align='center'>GitHub Pages</TableCell>
+                </TableRow>
+
+                <TableRow>
+                  <TableCell align='center'>Unit Testing with Jest and Enzyme</TableCell>
+                </TableRow>
+
+                <TableRow>
+                  <TableCell align='center'>Styled Components with Material-UI</TableCell>
+                </TableRow>
+
+                <TableRow>
+                  <TableCell align='center'>React Hooks, Router, Context and Link </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Grid>
+
+        <Grid item xl={2} lg={2} md={2} classes={{ item: css.movement }}>
           <TableContainer
             component={Paper}
             style={{
@@ -101,23 +149,69 @@ export function Home() {
 
               <TableBody>
                 <TableRow>
-                  <TableCell align='center'>React</TableCell>
+                  <TableCell align='center'>
+                    <a
+                      href='https://reactjs.org/'
+                      style={{
+                        color: '#D72323',
+                        textDecoration: 'none',
+                      }}
+                    >
+                      React
+                    </a>
+                  </TableCell>
                 </TableRow>
+
                 <TableRow>
-                  <TableCell align='center'>TypeScript</TableCell>
+                  <TableCell align='center'>
+                    <a
+                      href='https://www.typescriptlang.org/'
+                      style={{
+                        color: '#D72323',
+                        textDecoration: 'none',
+                      }}
+                    >
+                      TypeScript
+                    </a>
+                  </TableCell>
                 </TableRow>
+
                 <TableRow>
-                  <TableCell align='center'>Material-UI</TableCell>
+                  <TableCell align='center'>
+                    <a
+                      href='https://material-ui.com/'
+                      style={{
+                        color: '#D72323',
+                        textDecoration: 'none',
+                      }}
+                    >
+                      Material-UI
+                    </a>
+                  </TableCell>
                 </TableRow>
+
                 <TableRow>
                   <TableCell align='center'>React-Router</TableCell>
                 </TableRow>
+
                 <TableRow>
                   <TableCell align='center'>File-Saver</TableCell>
                 </TableRow>
+
                 <TableRow>
-                  <TableCell align='center'>Date-FNS</TableCell>
+                  <TableCell align='center'>
+                    <a
+                      href='https://date-fns.org/'
+                      style={{
+                        color: '#D72323',
+                        textDecoration: 'none',
+                      }}
+                    >
+                      Date-FNS
+                    </a>
+                  </TableCell>
                 </TableRow>
+
                 <TableRow>
                   <TableCell align='center'>React-Icon</TableCell>
                 </TableRow>
@@ -126,7 +220,7 @@ export function Home() {
           </TableContainer>
         </Grid>
 
-        <Grid item xl={2} lg={2} md={2}>
+        <Grid item xl={2} lg={2} md={2} classes={{ item: css.movement }}>
           <TableContainer component={Paper}>
             <Table size='small'>
               <TableHead>

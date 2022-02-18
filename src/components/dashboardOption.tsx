@@ -1,5 +1,5 @@
 import { MenuOption } from './menuOption';
-import { FaBuilding, FaDollarSign, FaUserFriends } from 'react-icons/fa';
+import { FaBuilding, FaDollarSign, FaHome, FaUserFriends } from 'react-icons/fa';
 import { IconButton, List, ListItem, ListItemText, Typography } from '@material-ui/core';
 import { MdSettings, MdWeb } from 'react-icons/md';
 import { VscCircleOutline } from 'react-icons/vsc';
@@ -37,6 +37,7 @@ export function DashboardOption() {
             height: '100%',
           }}
         >
+          <MenuOption to='/' title='Home' icon={FaHome} />
           <Typography
             color='textSecondary'
             align='center'
