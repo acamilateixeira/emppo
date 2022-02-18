@@ -83,6 +83,16 @@ export function Home() {
             >
               Permission Settings
             </a>
+            <br />
+            <a
+              href='/dashboard/finance'
+              style={{
+                color: '#D72323',
+                textDecoration: 'none',
+              }}
+            >
+              Finance Dashboard (In Development)
+            </a>
           </Typography>
         </Grid>
       </Grid>
@@ -119,6 +129,10 @@ export function Home() {
 
                 <TableRow>
                   <TableCell align='center'>React Hooks, Router, Context and Link </TableCell>
+                </TableRow>
+
+                <TableRow>
+                  <TableCell align='center'>SOLID</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
