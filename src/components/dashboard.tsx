@@ -43,7 +43,7 @@ export function Dashboard({ children }: DashboardProps) {
           <Container
             maxWidth='xl'
             style={{
-              padding: 5,
+              padding: '2rem',
             }}
           >
             <Grid container>

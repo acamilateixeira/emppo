@@ -69,7 +69,7 @@ export function DashboardFinances() {
         container
         alignItems='center'
         justifyContent='space-between'
-        style={{ padding: '3rem' }}
+        style={{ marginTop: '2rem' }}
       >
         <Grid item>
           <Button

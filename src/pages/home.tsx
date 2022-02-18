@@ -31,7 +31,6 @@ export function Home() {
             variant='h4'
             align='center'
             style={{
-              marginTop: '20px',
               marginBottom: '20px',
             }}
           >
