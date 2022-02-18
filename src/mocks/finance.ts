@@ -27,7 +27,7 @@ class FinanceServices {
             id: 2,
             name: 'Finance',
             description: 'Finance',
-            amount: 0,
+            amount: 4784851.8769,
             date: '2020-01-01',
             type: {
               id: 1,
@@ -43,9 +43,9 @@ class FinanceServices {
           },
           {
             id: 3,
-            name: 'Finance',
+            name: 'Invests',
             description: 'Finance',
-            amount: 0,
+            amount: 65489448.0,
             date: '2020-01-01',
             type: {
               id: 1,
@@ -61,9 +61,9 @@ class FinanceServices {
           },
           {
             id: 4,
-            name: 'Finance',
+            name: 'Entrance Fee',
             description: 'Finance',
-            amount: 0,
+            amount: 55789559.58858,
             date: '2020-01-01',
             type: {
               id: 1,
@@ -72,6 +72,24 @@ class FinanceServices {
             category: {
               id: 1,
               description: 'Accounting',
+            },
+            user: 'admin',
+            createdAt: '2020-01-01',
+            updatedAt: '2020-01-01',
+          },
+          {
+            id: 5,
+            name: 'Cost',
+            description: 'Cost',
+            amount: 10897848.458,
+            date: '2020-01-01',
+            type: {
+              id: 1,
+              description: 'Income',
+            },
+            category: {
+              id: 1,
+              description: 'Payroll',
             },
             user: 'admin',
             createdAt: '2020-01-01',

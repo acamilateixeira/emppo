@@ -86,7 +86,7 @@ export function DashboardFinances() {
         <Grid item xl={4} lg={4} md={4}>
           <TextField
             fullWidth
-            label='Search'
+            label='Search by name ...'
             variant='outlined'
             size='small'
             onChange={e => searchFinance(e.target.value)}

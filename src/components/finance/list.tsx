@@ -15,6 +15,7 @@ import { FaEdit, FaTrash } from 'react-icons/fa';
 import { useState } from 'react';
 import { Finance } from '../../models/finance';
 import { PaginacaoVirtual } from '../paginacaoVirtual';
+import { transformMoney } from '../../utils/money';
 
 interface ListProps {
   edit: (finance: Finance) => void;
@@ -46,7 +47,7 @@ export function List({ edit, delete: deleteFinance, finances }: ListProps) {
           <TableRow>
             <TableCell>ID</TableCell>
             <TableCell>Name</TableCell>
-            <TableCell>Description</TableCell>
+            <TableCell>Value</TableCell>
             <TableCell>Type</TableCell>
             <TableCell>Category</TableCell>
             <TableCell>Update by user</TableCell>
@@ -62,7 +63,7 @@ export function List({ edit, delete: deleteFinance, finances }: ListProps) {
             <TableRow key={finance.id}>
               <TableCell>{finance.id}</TableCell>
               <TableCell>{finance.name}</TableCell>
-              <TableCell>{finance.description}</TableCell>
+              <TableCell>{transformMoney(finance.amount)}</TableCell>
               <TableCell>{finance.type.description}</TableCell>
               <TableCell>{finance.category.description}</TableCell>
               <TableCell>{finance.user}</TableCell>
