@@ -116,13 +116,15 @@ class FinanceServices {
     });
   }
 
-  deleteFinance(id: number): Promise<void> {
+  deleteFinance: (id: number) => Promise<Pick<Finance, 'id'>> = id => {
     return new Promise(resolve => {
       setTimeout(() => {
-        resolve();
+        resolve({
+          id: id,
+        });
       }, 1000);
     });
-  }
+  };
 
   getType(): Promise<any[]> {
     return new Promise(resolve => {
