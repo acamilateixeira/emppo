@@ -50,6 +50,7 @@ export function List({ edit, delete: deleteFinance, finances }: ListProps) {
             <TableCell>Value</TableCell>
             <TableCell>Type</TableCell>
             <TableCell>Category</TableCell>
+            <TableCell>Date</TableCell>
             <TableCell>Update by user</TableCell>
             <TableCell align='center'>Actions</TableCell>
           </TableRow>
@@ -66,6 +67,7 @@ export function List({ edit, delete: deleteFinance, finances }: ListProps) {
               <TableCell>{transformMoney(finance.amount)}</TableCell>
               <TableCell>{finance.type.description}</TableCell>
               <TableCell>{finance.category.description}</TableCell>
+              <TableCell>{finance.date}</TableCell>
               <TableCell>{finance.user}</TableCell>
               <TableCell align='center'>
                 <Tooltip title='Edit'>

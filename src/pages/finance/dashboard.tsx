@@ -1,5 +1,5 @@
 import { Button, Grid, TextField, Typography } from '@material-ui/core';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { useFinance } from '../../hooks/useFinance';
 import FinanceServices from '../../mocks/finance';
@@ -16,6 +16,8 @@ export function DashboardFinances() {
 
   const [modalDelete, setModalDelete] = useState(false);
   const [modalEdit, setModalEdit] = useState(false);
+
+  const [name, setName] = useState('');
 
   useEffect(() => {
     async function loadFinances() {
@@ -44,12 +46,16 @@ export function DashboardFinances() {
     setModalEdit(false);
   }
 
-  function searchFinance(value: string) {
-    const response = finances.filter(finance =>
-      finance.name.toLowerCase().includes(value.toLowerCase())
-    );
-    setFinances(response);
-  }
+  const handleSearch = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setName(e.target.value);
+    },
+    [setName]
+  );
+
+  const result = !name
+    ? finances
+    : finances.filter(finance => finance.name.toLowerCase().includes(name.toLowerCase()));
 
   return (
     <>
@@ -89,7 +95,8 @@ export function DashboardFinances() {
             label='Search by name ...'
             variant='outlined'
             size='small'
-            onChange={e => searchFinance(e.target.value)}
+            value={name}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => handleSearch(event)}
           />
         </Grid>
       </Grid>
@@ -103,7 +110,7 @@ export function DashboardFinances() {
 
         <Grid item>
           {finances.length > 0 ? (
-            <List edit={openModalEdit} delete={openModalDelete} finances={finances} />
+            <List edit={openModalEdit} delete={openModalDelete} finances={result} />
           ) : (
             <Typography align='center' color='textSecondary'>
               Any finance found
