@@ -10,12 +10,14 @@ import { List } from '../../components/finance/list';
 import { ModalDelete } from '../../components/finance/modalDelete';
 import { ModalEdit } from '../../components/finance/modalEdit';
 import { Header } from '../../components/header';
+import { ModalAdd } from '../../components/finance/modalAdd';
 
 export function DashboardFinances() {
   const { finances, setFinances, setFinance } = useFinance();
 
   const [modalDelete, setModalDelete] = useState(false);
   const [modalEdit, setModalEdit] = useState(false);
+  const [modalAdd, setModalAdd] = useState(false);
 
   const [name, setName] = useState('');
 
@@ -44,6 +46,10 @@ export function DashboardFinances() {
 
   function closeModalEdit() {
     setModalEdit(false);
+  }
+
+  function openModalAdd() {
+    setModalAdd(true);
   }
 
   const handleSearch = useCallback(
@@ -78,13 +84,7 @@ export function DashboardFinances() {
         style={{ marginTop: '2rem' }}
       >
         <Grid item>
-          <Button
-            fullWidth
-            variant='contained'
-            color='primary'
-            onClick={() => openModalEdit({} as Finance)}
-            size='small'
-          >
+          <Button fullWidth variant='contained' color='primary' onClick={openModalAdd} size='small'>
             New Finance
           </Button>
         </Grid>
@@ -121,6 +121,7 @@ export function DashboardFinances() {
 
       <ModalDelete open={modalDelete} onClose={closeModalDelete} />
       <ModalEdit open={modalEdit} onClose={closeModalEdit} />
+      <ModalAdd open={modalAdd} onClose={() => setModalAdd(false)} />
     </>
   );
 }

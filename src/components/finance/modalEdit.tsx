@@ -142,6 +142,7 @@ export function ModalEdit({ open, onClose }: ModalEditProps) {
                 margin='dense'
                 size='small'
                 label='Date'
+                InputLabelProps={{ shrink: true }}
                 value={finance.date}
                 onChange={e => setFinance({ ...finance, date: e.target.value })}
               />
